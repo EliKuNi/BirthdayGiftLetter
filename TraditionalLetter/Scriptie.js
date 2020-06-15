@@ -1,7 +1,7 @@
 window.onload = () => {
 
     let textForTitle = "Dear Willbur,";
-    let textForSign = "Your very good friend, Elisa.  ❇";
+    let textForSign = "Your very good friend (hahah, jk) bugaboo Elisa ♡";
     let textForText = "Good morning. Since our last meeting, have passed about 8 years. We were the best friends in high school. Let's meet tomorrow near our school and talk. See you soon...";
 
     let x = 0;
