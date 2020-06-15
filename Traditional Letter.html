@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Something for you</title>
+    </head>
+    <body>
+        <audio id="audio" src="https://dl.dropbox.com/s/fthb101m8dc5joy/AUD-20190802-WA0029.mp3?dl=0"></audio>
+        <div class="letter">
+            <p align="center" id="title"></p>
+            <p id="text"></p>
+            <p id="signature" align="right"></p>
+        </div>
+        <style>
+        @import url('https://fonts.googleapis.com/css?family=Caveat');
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0px;
+    box-sizing: border-box;
+    background: url("https://i.pinimg.com/originals/57/ae/93/57ae93462971760386cadfe7195efef6.jpg");
+    background-position: -120px 0px;
+    background-size: cover;
+}
+body {
+    font-family: "Caveat", cursive;
+    font-size: 40px;
+}
+.letter {
+    position: absolute;
+    background: white;
+    padding: 5px 10px;
+    box-shadow: 1px 1px 25px gray;
+    margin: 160px auto auto 25px;
+    transform: rotate(-2.5deg);
+    width: 85%;
+    height: 60%;
+}
+#signature {
+    right: 30px;
+    top: 900px;
+    position: absolute;
+}
+          </style>
+
+        <script>
+            alert("Tap anywhere on the screen to start reading. Enjoy! ^-^");
+        window.onload = () => {
+window.addEventListener("click",function(){audio.play();})
+
+    let textForTitle = "Dear Willbur,";
+    let textForText = "Happy birthday!! Wish you the very VERY best not only for this special day, but for the rest of your life! I know you have been through hard times before, that is why I always like to remind you that you deserve only the BEST of the best! You are an amazing person, both inside and out! A beautiful soul with such a cheerful, positive energy. ^-^ I am sure that many good things are coming your way on the future, so excited about it! (okay, Im so happy even while writing this letter). Anyway, aah have fun! Hope you enjoyed this little gift I created for you. :3 Sharv and I love you SOOO much! P.s. I know, you told me I should not have but.. I couldnt resist!! I want to make you happy any way I can! :3 Plus I gotta admit this was so much fun to make actually :) I love you so much Chaton."
+    let textForSign = "Your very good friend (hahah, jk) bugaboo Elisa <3";
+
+    let x = 0;
+    let writeText = () => {
+        text.append(textForText.charAt(x));
+        x++;
+        if (x == 167) {
+            let i3 = setInterval(writeSign, 100);
+        }
+    }
+    
+    let y = 0;
+    let writeSign = () => {
+        signature.append(textForSign.charAt(y));
+        y++;
+    }
+    
+    let z = 0;
+    let writeTitle = () => {
+        title.append(textForTitle.charAt(z));
+        z++;
+        
+        if (z == 15) {
+            clearInterval(i1);
+            let i2 = setInterval(writeText, 35);
+        }
+    }
+    let i1 = setInterval(writeTitle, 100);
+    
+}
+        </script>
+    </body>
+</html> 
