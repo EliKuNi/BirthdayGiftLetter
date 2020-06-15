@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+	<body>
+			<div id='thatDiv' class='jitterAnimated bordered'>
+				<p class='textGlow animated'>Alot of random text here to see what it would look like with alot of writing. Im not sure what else to write but ill just keep writing anyways.
+					</p>
+					<button type="button" class='animated' onclick="pageRedirect()"></button>
+			</div>
+
+			<div id='rightDiv' class='jitterAnimated bordered'>
+				<m class='textGlow animated'>Alot of random text here to see what it would look like with alot of writing. Im not sure what else to write but ill just keep writing anyways.
+                </m>
+			</div>
+
+<style>
+body
+{
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+  margin: 0;
+  perspective: 100vw;
+  perspective-origin: 50% 10%;
+  transform-style: preserve-3d;
+  background: url('https://images.pexels.com/photos/956981/milky-way-starry-sky-night-sky-star-956981.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=1500') no-repeat center center fixed; 
+  background-size: cover; 
+  -webkit-background-size: cover; 
+  -moz-background-size: cover; 
+  -o-background-size: cover;  
+  margin:0;
+  padding:0;
+  position: fixed;
+}
+
+p
+{
+  font-family: "Righteous";
+  color: rgba(125,240,250, 0.8);
+  font-size: 30px;
+  position: absolute;
+  width: 20vw;
+  transform: translateZ(8vw);
+  padding: 2vw;
+}
+
+m
+{
+  font-family: "Righteous";
+  color: rgba(125,240,250, 0.8);
+  font-size: 30px;
+  position: absolute;
+  left: 80px;
+  width: 20vw;
+  transform: translateZ(8vw);
+  padding: 2vw;
+}
+
+.mainPerspective
+{
+  perspective: 100vw;
+  transform-style: preserve-3d;
+}
+
+.animated
+{
+	transition: all 0.5s linear 0s;
+}
+.jitterAnimated
+{
+	transition: all 5s ease 0s;
+}
+
+.bordered
+{
+  border-radius: 2vw;
+  border: 0.3vw solid rgba(125, 240, 250, 0.8);
+}
+
+#firstImage
+{
+  position: absolute;
+  top:0
+}
+
+#thatDiv
+{
+  position: absolute;
+  width: 50vw;
+  height: 400px;
+  top: 7vw;
+  left: 10vw;
+  transform: rotateY(35deg);
+  transform-style: preserve-3d;
+}
+
+#thatDiv button
+{
+  border: 0.8vw rgb(125,240,250) dashed;
+  /* border-style: ; */
+  background-color: transparent;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 8vw;
+  right: 8vw;
+  width: 6vw;
+  height: 6vw;
+  opacity: 0.8;
+  font-size: 3vw;
+  animation: spin 50s linear infinite;
+}
+
+#thatDiv button:hover
+{
+  background-color: rgb(125,240,250);
+  cursor: pointer;
+}
+
+#rightDiv
+{
+  position: absolute;
+  width: 30vw;  
+  height: 400px;
+  top: 5vw;
+  right: 10vw;
+  transform: rotateY(-45deg);
+  transform-style: preserve-3d;
+}
+
+#rightDiv p
+{
+  transform: translateZ(6vw);
+}
+
+#rightDiv2
+{
+  position: absolute;
+  width: 30vw;
+  height: 60vh;
+  top: 75vh;
+  right: 10vw;
+  transform: rotateY(-45deg);
+  transform-style: preserve-3d;
+}
+
+@keyframes spin
+{
+  0% { transform: rotate(0deg) translateZ(2vw);}
+  100% { transform: rotate(360deg) translateZ(2vw);}
+}
+</style>
+
+<script>
+// Redirects you to the traditional, old fashioned way letter :3
+function pageRedirect() {
+      window.location.href = "https://www.google.com";
+    }
+
+var thatDiv, rightDiv;
+
+init();
+
+function init()
+{
+	thatDiv = document.getElementById('thatDiv');
+	rightDiv = document.getElementById('rightDiv');
+	setInterval(randomiseBlur, 500);
+	threeDJitter();
+	setInterval(threeDJitter, 3000);
+	randomiseBlur();
+}
+
+function threeDJitter()
+{
+	let randomX = Math.random()*5; //0-5
+	let randomY = Math.random()*5+30; //30-35
+	let randomZ = Math.random()*5;
+	let randomTime = Math.random()*2000+2000;
+		thatDiv.style.transform = 'rotateX('+randomX+'deg) rotateY('+randomY+'deg) rotateZ('+randomZ+'deg)';
+
+	randomX = Math.random()*8; //0-5
+	randomZ = Math.random()*8;
+	randomY = Math.random()*-5-40; //-45 to -40
+	randomTime = Math.random()*2000+2000;
+	rightDiv.style.transform = 'rotateX('+randomX+'deg) rotateY('+randomY+'deg) rotateZ('+randomZ+'deg)';
+	let allText = document.getElementsByClassName('textGlow');
+}
+
+function randomiseBlur()
+{
+	// let allText = document.getElementsByTagName('h1');
+	let allText = document.getElementsByClassName('textGlow');
+	let randomBlur = Math.random()*2;
+	for(var i = 0; i < allText.length; i++)
+  {
+		let thisText = allText[i];
+
+		thisText.style.textShadow = '0 0 '+randomBlur+'vw rgba(125,240,250,0.8)';
+		let o = 1;
+	}
+
+	let allImage = document.getElementsByClassName('imageGlow');
+
+}
+</script>
+
+
+</body>
+</html>
