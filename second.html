@@ -9,7 +9,6 @@
         <div class="letter">
             <p align="center" id="title"></p>
             <p id="text"></p>
-            <p id="signature" align="right"></p>
         </div>
         <style>
         @import url('https://fonts.googleapis.com/css?family=Caveat');
@@ -56,16 +55,8 @@ window.addEventListener("click",function(){audio.play();})
     let writeText = () => {
         text.append(textForText.charAt(x));
         x++;
-        if (x == 167) {
-            let i3 = setInterval(writeSign, 100);
-        }
     }
     
-    let y = 0;
-    let writeSign = () => {
-        signature.append(textForSign.charAt(y));
-        y++;
-    }
     
     let z = 0;
     let writeTitle = () => {
