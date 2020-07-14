@@ -76,7 +76,7 @@ window.addEventListener("click",function(){audio.play();})
 
 <script>
     (function fairyDustCursor() {
-        
+      
       var possibleColors = ["#D61C59", "#E7D84B", "#1B8798"]
       var width = window.innerWidth;
       var height = window.innerHeight;
@@ -88,7 +88,7 @@ window.addEventListener("click",function(){audio.play();})
         loop();
       }
       
-      // Bind events that are needed
+      // Bind events needed
       function bindEvents() {
         document.addEventListener('mousemove', onMouseMove);
         document.addEventListener('touchmove', onTouchMove);
@@ -192,9 +192,7 @@ window.addEventListener("click",function(){audio.play();})
         
       }
       
-      /**
-       * Utils
-       */
+      /* Utils */
       
       // Applies css `properties` to an element.
       function applyProperties( target, properties ) {
