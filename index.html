@@ -203,8 +203,8 @@ function randomiseBlur()
 </script>
 <script>
     (function fairyDustCursor() {
-
-var possibleColors = ["#D61C59", "#E7D84B", "#1B8798"]    
+      
+      var possibleColors = ["#D61C59", "#E7D84B", "#1B8798"]
       var width = window.innerWidth;
       var height = window.innerHeight;
       var cursor = {x: width/2, y: width/2};
@@ -215,7 +215,7 @@ var possibleColors = ["#D61C59", "#E7D84B", "#1B8798"]
         loop();
       }
       
-      // Bind events that are needed
+      // Bind events needed
       function bindEvents() {
         document.addEventListener('mousemove', onMouseMove);
         document.addEventListener('touchmove', onTouchMove);
@@ -252,12 +252,11 @@ var possibleColors = ["#D61C59", "#E7D84B", "#1B8798"]
       
       function updateParticles() {
         
-        // Updated
         for( var i = 0; i < particles.length; i++ ) {
           particles[i].update();
         }
         
-        // Remove dead particles
+        // Removing dead particles
         for( var i = particles.length -1; i >= 0; i-- ) {
           if( particles[i].lifeSpan < 0 ) {
             particles[i].die();
@@ -272,7 +271,7 @@ var possibleColors = ["#D61C59", "#E7D84B", "#1B8798"]
         updateParticles();
       }
       
-      /*  Particles */
+      /* Particles */
       
       function Particle() {
     
